@@ -1,0 +1,58 @@
+#Question 1
+> A=matrix(c(2,0,1,3), ncol=2)
+> A
+     [,1] [,2]
+[1,]    2    1
+[2,]    0    3
+> B=matrix(c(5,2,4,-1), ncol=2)
+> B
+     [,1] [,2]
+[1,]    5    4
+[2,]    2   -1
+> A + B
+     [,1] [,2]
+[1,]    7    5
+[2,]    2    2
+> A - B
+     [,1] [,2]
+[1,]   -3   -3
+[2,]   -2    4
+
+#Question 2
+> diag(4,1,2,3)
+     [,1] [,2]
+[1,]    4    0
+  #That's not right...
+> diag(1:4, 4)
+     [,1] [,2] [,3] [,4]
+[1,]    1    0    0    0
+[2,]    0    2    0    0
+[3,]    0    0    3    0
+[4,]    0    0    0    4
+  #There we go.
+
+#Question 3
+> diag(3, 5)
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    3    0    0    0    0
+[2,]    0    3    0    0    0
+[3,]    0    0    3    0    0
+[4,]    0    0    0    3    0
+[5,]    0    0    0    0    3
+  #Not quite...
+> matr <- matrix(0, nrow=5, ncol=5)
+  #Creates 5x5 Matrix, named "matr".
+> matr[1,]<- 1
+  #States all numbers in Row 1 be "1".
+> matr[,1]<- 2
+  #States all numbers in Column 1 be "2".
+> diag(matr) <- 3
+  #Creates diagonal integers be "3".
+> print(matr)
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    3    1    1    1    1
+[2,]    2    3    0    0    0
+[3,]    2    0    3    0    0
+[4,]    2    0    0    3    0
+[5,]    2    0    0    0    3
+  #Good.
